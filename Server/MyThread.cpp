@@ -20,7 +20,7 @@ void MyThread::run(void)
 		iResult = recv(acceptSocket, RecvBuf, BufLen, 0);
 		if (iResult == SOCKET_ERROR)
 		{
-			std::cout << "Receive error!" << std::endl;
+			cout << "Receive error!" << endl;
 			return;
 		}
 
@@ -44,7 +44,7 @@ void MyThread::run(void)
 						  SOCKET socket = this->getSocket();
 						  if (send(socket, buff, errorMessage.length(), 0) == SOCKET_ERROR)
 						  {
-							  std::cout << "Sending error!" << std::endl;
+							  cout << "Sending error!" << endl;
 							  return;
 						  }
 						  ok = 0;
@@ -77,7 +77,7 @@ void MyThread::run(void)
 				  		//{
 				  			if (send(socket, buff, usernames.length(), 0) == SOCKET_ERROR)
 				  			{
-				  				std::cout << "Sending error!" << std::endl;
+				  				cout << "Sending error!" << endl;
 				  				return;
 				  			}
 				  		//}
@@ -101,7 +101,7 @@ void MyThread::run(void)
 							  SOCKET socket = (*it)->getSocket();
 							  if (send(socket, RecvBuf, iResult, 0) == SOCKET_ERROR)
 							  {
-								  std::cout << "Sending error!" << std::endl;
+								  cout << "Sending error!" << endl;
 								  return;
 							  }cout << "private message sent !!!" << endl;
 						  }
@@ -128,7 +128,7 @@ void MyThread::run(void)
 								  SOCKET socket = (*it)->getSocket();
 								  if (send(socket, RecvBuf, iResult, 0) == SOCKET_ERROR)
 								  {
-									  std::cout << "Sending error!" << std::endl;
+									  cout << "Sending error!" << endl;
 									  return;
 								  }cout << "private message sent !!!" << endl;
 							  }
@@ -152,9 +152,10 @@ void MyThread::run(void)
 						  SOCKET socket = (*it)->getSocket();
 						  if (send(socket, RecvBuf, iResult, 0) == SOCKET_ERROR)
 						  {
-							  std::cout << "Sending error!" << std::endl;
+							  cout << "Sending error!" << endl;
 							  return;
 						  }
+						  cout << "public message sent(to everyone) !!!" << endl;
 					  }
 					  else
 					  {
